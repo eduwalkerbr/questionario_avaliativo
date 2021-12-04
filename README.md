@@ -1,4 +1,4 @@
-# questionario_avaliativo
+# Aplicação Questionário Avaliativo
 
 Pojeto desenvolvido em **Flutter/Dart**, cuja finalidade corresponde a um questionário, onde as perguntas são avaliadas gerando uma nota e um nível ao fim do questionário.
 Vale destacar que a disposição das perguntas será aleatória, de forma que não seja possível a definição prévia das pontuações.
