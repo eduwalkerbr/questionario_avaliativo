@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:questionario_avaliativo/components/questao.dart';
 import 'package:questionario_avaliativo/components/resposta.dart';
 
-import '../questions_list.dart';
+import '../model/questions_list.dart';
 
 class Questionario extends StatelessWidget {
   final int questSel;
