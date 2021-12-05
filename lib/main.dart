@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:questionario_avaliativo/components/questao.dart';
-import 'package:questionario_avaliativo/components/reiniciar.dart';
-import 'package:questionario_avaliativo/components/resposta.dart';
+import 'package:questionario_avaliativo/components/questionario.dart';
+import 'package:questionario_avaliativo/components/resultado.dart';
 import 'package:questionario_avaliativo/questions_list.dart';
 
 main() => runApp(PerguntaApp());
 
 class _PerguntaAppState extends State<PerguntaApp> {
-  final perguntas = Questions_list.getQuestionList();
   bool _hasQuestion = true;
 
   var _questSel = 0;
-  void _responder() {
+  var pontTotal = 0;
+
+  void _responder(int pontuacao) {
     setState(() {
-      if (_questSel == (perguntas.length - 1)) {
+      if (_questSel == Questions_list.getLengthList() - 1) {
         _hasQuestion = false;
       } else {
         _questSel++;
+        pontTotal += pontuacao;
       }
     });
   }
@@ -25,13 +26,12 @@ class _PerguntaAppState extends State<PerguntaApp> {
     setState(() {
       _questSel = 0;
       _hasQuestion = true;
+      pontTotal = 0;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    List<String> respList = perguntas[_questSel].cast()['respostas'];
-
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -39,52 +39,13 @@ class _PerguntaAppState extends State<PerguntaApp> {
           centerTitle: true,
         ),
         body: _hasQuestion
-            ? Column(
-                children: [
-                  Questao(
-                    descricao: perguntas[_questSel]['questao'].toString(),
-                  ),
-                  ...respList
-                      .map((resp) => Resposta(
-                            descricao: resp,
-                            funcao: _responder,
-                          ))
-                      .toList(),
-                ],
+            ? Questionario(
+                questSel: _questSel,
+                responder: _responder,
               )
-            : SizedBox(
-                width: double.infinity,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const Text(
-                      "Sem mais perguntas a responder!",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.blue,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const Text(
-                      "Obrigado !!!",
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Reiniciar(
-                      descricao: "Reiniciar o Questionário",
-                      funcao: _reiniciar,
-                    ),
-                  ],
-                ),
+            : Resultado(
+                funcao: _reiniciar,
+                pontuacao: pontTotal,
               ),
       ),
     );
