@@ -1,6 +1,6 @@
-// ignore: camel_case_types
+// Classe de objetos a serem utilizados na aplicação
 class Questions_list {
-  // ignore: non_constant_identifier_names
+  // Map contendo a questao, e outro map das respostas / nota
   static var question_list = [
     {
       'questao': "Qual sua cor favorita ?",
@@ -17,11 +17,11 @@ class Questions_list {
         {'conteudo': 'Cachorro', 'nota': 7},
         {'conteudo': 'Gato', 'nota': 5},
         {'conteudo': 'Cavalo', 'nota': 3},
-        {'conteudo': 'Peixe', 'nota': 9},
+        {'conteudo': 'Peixe', 'nota': 10},
       ],
     },
     {
-      'questao': "Qual sua local de Viagem favorito ?",
+      'questao': "Qual sua local de Viagem de férias favorito ?",
       'respostas': [
         {'conteudo': 'Praia', 'nota': 10},
         {'conteudo': 'Sítio', 'nota': 8},
@@ -49,10 +49,16 @@ class Questions_list {
     }
   ];
 
+  /**
+   * Método que retorna o Map das questões
+   */
   static List<Map<String, Object>> getQuestionList() {
     return question_list;
   }
 
+  /**
+  * Método que retorna o tamanho da lista
+  */
   static int getLengthList() {
     return question_list.length;
   }
