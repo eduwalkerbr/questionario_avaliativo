@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:questionario_avaliativo/components/questao.dart';
-import 'package:questionario_avaliativo/components/resposta.dart';
+import 'package:questionario_avaliativo/components/questionario/questao.dart';
+import 'package:questionario_avaliativo/components/questionario/resposta_button.dart';
 
-import '../model/questions_list.dart';
+import '../../model/questions_list.dart';
 
 class Questionario extends StatelessWidget {
   final int questSel;
@@ -15,7 +15,9 @@ class Questionario extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //Map das questões, com suas resposta e notas
     final perguntas = Questions_list.getQuestionList();
+    //Obtém um map expecíficos das respostas e notas
     List<Map<String, Object>> respList =
         perguntas[questSel].cast()['respostas'];
 
@@ -24,8 +26,9 @@ class Questionario extends StatelessWidget {
         Questao(
           descricao: perguntas[questSel]['questao'].toString(),
         ),
+        //Converte a lista de resposta no Widget Resposta
         ...respList
-            .map((resp) => Resposta(
+            .map((resp) => RespostaButton(
                   descricao: resp['conteudo'].toString(),
                   funcao: () => responder(int.parse(resp['nota'].toString())),
                 ))

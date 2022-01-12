@@ -1,28 +1,36 @@
 import 'package:flutter/material.dart';
 
-class Resposta extends StatelessWidget {
+class ReiniciarButton extends StatelessWidget {
   final String descricao;
-  final void Function() funcao;
+  void Function()? funcao;
 
-  const Resposta({
+  ReiniciarButton({
     required this.descricao,
-    required this.funcao,
+    this.funcao,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      //Ocupa todo o espaçamento
       width: double.infinity,
-      margin: const EdgeInsets.fromLTRB(50, 3, 50, 3),
+      //Adiciona margem em todas as direções
+      margin: const EdgeInsets.all(50),
+      //Criar o botão de reiniciar
       child: ElevatedButton(
+        //Estilo do botão
         style: ElevatedButton.styleFrom(
+          elevation: 10,
           primary: Colors.blue,
+          //Estilo do texto do botão
           textStyle: const TextStyle(
             color: Colors.white,
             fontSize: 16,
           ),
         ),
+        //Função ao pressionaro botão
         onPressed: funcao,
+        //Texto do botão
         child: Text(descricao),
       ),
     );
