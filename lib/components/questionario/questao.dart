@@ -13,7 +13,7 @@ class Questao extends StatelessWidget {
       //Utiliza 80% do tamanho disponível da mídia
       height: MediaQuery.of(context).size.height * 0.08,
       //Adiciona margin em todas as direções
-      margin: const EdgeInsets.all(15),
+      margin: const EdgeInsets.all(10),
       alignment: Alignment.center,
       decoration: BoxDecoration(
         //Borda arredondada com raio de 10
@@ -33,7 +33,7 @@ class Questao extends StatelessWidget {
         descricao,
         //Estilos do texto
         style: const TextStyle(
-          fontSize: 21,
+          fontSize: 18,
           fontWeight: FontWeight.bold,
           color: Colors.white,
         ),
