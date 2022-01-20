@@ -16,7 +16,7 @@ Vale destacar que a disposição das perguntas seque uma orde pré-definida.
 
 Segue abaixo algumas imagens da aplicação:
 
-[![Imagens Aplicação](lib/img/imagem_completa.png)]
+![Imagens Aplicação](lib/img/imagem_completa.png)
 
 
 ## Getting Started
