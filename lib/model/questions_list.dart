@@ -21,7 +21,7 @@ class Questions_list {
       ],
     },
     {
-      'questao': "Qual sua local de Viagem de férias favorito ?",
+      'questao': "Qual seu local de Viagem de férias favorito ?",
       'respostas': [
         {'conteudo': 'Praia', 'nota': 10},
         {'conteudo': 'Sítio', 'nota': 8},

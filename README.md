@@ -1,6 +1,6 @@
 # Aplicação Questionário Avaliativo
 
-Pojeto desenvolvido em **Flutter/Dart**, cuja finalidade corresponde a um questionário, onde as perguntas são avaliadas gerando uma nota e um nível ao fim do questionário.
+Projeto desenvolvido em **Flutter/Dart**, cuja finalidade corresponde a um questionário, onde as perguntas são avaliadas gerando uma nota e um nível ao fim do questionário.
 Vale destacar que a disposição das perguntas seque uma orde pré-definida.
 
 ## Tecnologias Utilizadas
@@ -11,6 +11,13 @@ Vale destacar que a disposição das perguntas seque uma orde pré-definida.
 * Dart
 * Java
 * Git
+
+## Imagens da Aplicação
+
+Segue abaixo algumas imagens da aplicação:
+
+- [![Tela do Questionário](lib/img/tela_questionario.png)]
+- [![Tela do Resultado](lib/img/tela_resultado.png)]
 
 ## Getting Started
 
