@@ -16,8 +16,8 @@ Vale destacar que a disposição das perguntas seque uma orde pré-definida.
 
 Segue abaixo algumas imagens da aplicação:
 
-- [![Tela do Questionário](lib/img/tela_questionario.png)]
-- [![Tela do Resultado](lib/img/tela_resultado.png)]
+[![Imagens Aplicação](lib/img/imagem_completa.png)]
+
 
 ## Getting Started
 
